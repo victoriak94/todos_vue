@@ -1,5 +1,10 @@
 <template>
-  <div></div>
+  <div>
+    <div v-bind:key="todo.id" v-for="todo in todos">
+      <TodoItem v-bind:todo="todo" />
+    </div>
+    <TodoItem />
+  </div>
 </template>
 
 <script>

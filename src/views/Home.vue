@@ -1,5 +1,7 @@
 <template>
-  <div class="home"></div>
+  <div class="home">
+    <Todos v-bind:todos="todos" />
+  </div>
 </template>
 
 <script>
@@ -28,7 +30,7 @@ export default {
 
       axios
         .post("https://jsonplaceholder.typicode.com/todos")
-        .then(res => (this.todos = [...this.todos, res.data]));
+        .then(res => (this.todos = [...this.todos, res.data]))
         .catch(err => console.log(err));
     }
   },
