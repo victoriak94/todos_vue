@@ -1,17 +1,20 @@
 <template>
   <div class="home">
+    <AddTodo />
     <Todos v-bind:todos="todos" v-on:del-todo="deleteTodo" />
   </div>
 </template>
 
 <script>
 import Todos from "../components/Todos";
+import AddTodo from "../components/AddTodo";
 import axios from "axios";
 
 export default {
   name: "home",
   components: {
-    Todos
+    Todos,
+    AddTodo
   },
   data() {
     return {
